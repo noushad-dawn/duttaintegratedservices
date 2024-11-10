@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/duttaintegratedservices/static/css/main.12d32a71.css",
-    "main.js": "/duttaintegratedservices/static/js/main.35b977d1.js",
+    "main.css": "/duttaintegratedservices/static/css/main.1e856ebc.css",
+    "main.js": "/duttaintegratedservices/static/js/main.9d49492a.js",
     "index.html": "/duttaintegratedservices/index.html",
-    "main.12d32a71.css.map": "/duttaintegratedservices/static/css/main.12d32a71.css.map",
-    "main.35b977d1.js.map": "/duttaintegratedservices/static/js/main.35b977d1.js.map"
+    "main.1e856ebc.css.map": "/duttaintegratedservices/static/css/main.1e856ebc.css.map",
+    "main.9d49492a.js.map": "/duttaintegratedservices/static/js/main.9d49492a.js.map"
   },
   "entrypoints": [
-    "static/css/main.12d32a71.css",
-    "static/js/main.35b977d1.js"
+    "static/css/main.1e856ebc.css",
+    "static/js/main.9d49492a.js"
   ]
 }
