@@ -246,36 +246,42 @@ export function WelcomeSection() {
       <div className="absolute inset-0 bg-black opacity-60"></div>
 
       {/* Content */}
-      <div className="relative z-10 flex items-center h-full pl-10 pr-10">
-        <div className="text-white max-w-lg">
-          <h1 className="text-5xl font-bold text-text mb-4">Welcome to Dutta Integrated Services</h1>
-          <p className="text-lg mb-6">Delivering excellence in every service we offer</p>
+      <div className="relative z-10 flex items-center justify-left h-full px-4 sm:px-10">
+        <div className="text-white max-w-lg text-left sm:text-left">
+          <h1 className="text-3xl sm:text-5xl  font-bold text-text mb-4">
+            Welcome to Dutta Integrated Services
+          </h1>
+          <p className="text-base sm:text-lg mb-6">
+            Delivering excellence in every service we offer
+          </p>
 
           {/* New Text Content */}
-          <p className="text-md mb-4 text-gray-300">
+          <p className="text-sm sm:text-md mb-4 text-gray-300">
             At Dutta Integrated Services, we’re committed to providing top-quality solutions tailored to meet your unique needs. With a team of dedicated professionals, we cover a wide range of services that empower your business, enhance productivity, and drive sustainable growth.
           </p>
-          <p className="text-md mb-6 text-gray-300">
+          <p className="text-sm sm:text-md mb-6 text-gray-300">
             From comprehensive consulting to hands-on support, we go beyond expectations to deliver results that matter. Trust us to be your partner in achieving success and excellence in every project.
           </p>
 
           {/* Buttons */}
-          <div className="flex space-x-4">
+          <div className="flex flex-col sm:flex-row text-center space-y-2 sm:space-y-0 sm:space-x-2">
             {/* Get Started Button */}
-            <button className="px-6 py-3 bg-[#ee6b6e] text-white font-semibold rounded-lg hover:bg-transparent hover:text-[#ee6b6e] hover:border-[#ee6b6e] border border-white transition duration-300">
+            <a href="#contact" className="px-4 py-2 bg-[#ee6b6e] text-white font-semibold rounded-lg hover:bg-transparent hover:text-[#ee6b6e] hover:border-[#ee6b6e] border border-white transition duration-300">
               Get Started
-            </button>
+            </a>
 
             {/* Learn More Button */}
-            <button className="px-6 py-3 bg-transparent text-[#ee6b6e] font-semibold rounded-lg hover:bg-[#ee6b6e] hover:text-white hover:border-white border border-[#ee6b6e] transition duration-300">
+            <a href="#services" className="px-4 py-2 bg-transparent text-[#ee6b6e] font-semibold rounded-lg hover:bg-[#ee6b6e] hover:text-white hover:border-white border border-[#ee6b6e] transition duration-300">
               Learn More
-            </button>
+            </a>
           </div>
         </div>
       </div>
     </div>
   );
 }
+
+
 
 
 

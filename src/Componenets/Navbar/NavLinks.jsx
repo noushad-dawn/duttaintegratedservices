@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const NavLinks = () => {
+const NavLinks = ({ closeNavbar }) => {  // Add closeNavbar prop
   const [heading, setHeading] = useState("");
 
   const links = [
@@ -22,7 +22,7 @@ const NavLinks = () => {
         { name: "Insurance", link: "#industries" },
         { name: "Banking & Finance", link: "#industries" },
         { name: "Education", link: "#industries" },
-        { name: "Trasnsport", link: "#industries" },
+        { name: "Transport", link: "#industries" },
         { name: "Real Estate", link: "#industries" },
       ],
     },
@@ -37,17 +37,21 @@ const NavLinks = () => {
               className="py-5 flex justify-between items-center md:pr-0 pr-5 group"
               onClick={() => setHeading(heading !== link.name ? link.name : "")}
             >
-              <a className="text-black font-bold hover:text-[#f97068] duration-300"  href={link.sublinks[0].link}>{link.name}</a> {/* Updated */}
-              <span className="text-xl">
-                
-              </span>
+              <a className="text-black font-bold hover:text-[#f97068] duration-300" href={link.sublinks[0].link}>{link.name}</a> {/* Updated */}
+              <span className="text-xl"></span>
             </h1>
 
             {heading === link.name && (
               <ul className="md:hidden list-none space-y-2">
                 {link.sublinks.map((sublink) => (
-                  <li key={sublink.name} className="py-2 pl-7 ">
-                    <a href={sublink.link} className="hover:text-[#f97068] ">{sublink.name}</a>
+                  <li key={sublink.name} className="py-2 pl-7">
+                    <a
+                      href={sublink.link}
+                      className="hover:text-[#f97068]"
+                      onClick={() => closeNavbar()}  // Close navbar when sublink is clicked
+                    >
+                      {sublink.name}
+                    </a>
                   </li>
                 ))}
               </ul>

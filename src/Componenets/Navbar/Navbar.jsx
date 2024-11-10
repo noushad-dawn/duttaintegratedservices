@@ -22,7 +22,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-div fixed top-0 left-0 w-full z-50 shadow-md">
-       <div className="w-full bg-white px-5 lg:px-10 flex items-center justify-between">
+      <div className="w-full bg-white px-5 lg:px-10 flex items-center justify-between">
         <div className="z-50 p-5 flex items-center ">
           <img 
             src='./assets/images/logo.png' 
@@ -46,7 +46,7 @@ const Navbar = () => {
               About
             </a>
           </div>
-          <NavLinks />
+          <NavLinks closeNavbar={() => setOpen(false)} /> {/* Pass the closeNavbar function */}
           <div>
             <a href="#contact" className="py-7 px-3 text-black font-bold inline-block hover:text-[#f97068] duration-300">
               Contact
@@ -68,13 +68,13 @@ const Navbar = () => {
         >
           <div className="mt-5">
             <div>
-              <a href="/" className="py-7 px-3  inline-block" onClick={() => setOpen(false)}>
+              <a href="/" className="py-7 px-3 font-bold inline-block" onClick={() => setOpen(false)}>
                 Home
               </a>
             </div>
-            <NavLinks />
+            <NavLinks closeNavbar={() => setOpen(false)} /> {/* Pass the closeNavbar function */}
             <div>
-              <a href="#contact" className="py-7 px-3 inline-block" onClick={() => setOpen(false)}>
+              <a href="#contact" className="py-7 px-3 font-bold inline-block" onClick={() => setOpen(false)}>
                 Contact
               </a>
             </div>
