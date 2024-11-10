@@ -311,7 +311,7 @@ export function IndustriesCard({ image, label, description }) {
       </div>
 
       <div className="p-5 transition-opacity duration-300 hover:opacity-90">
-        <a href="#">
+        <a href="#contact">
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-text dark:text-white transition-colors duration-300 hover:text-yellow-400">
             {label}
           </h5>
