@@ -12,12 +12,11 @@ export function Component() {
       <div className="w-full">
         <div className="grid w-full grid-cols-2 gap-8 px-6 py-8 md:grid-cols-4">
           <div>
-            <Footer.Title title="Company" className="text-[#ee6b6e]" /> {/* Heading color */}
+            <Footer.Title title="Contact Details" className="text-[#ee6b6e]" /> {/* Heading color */}
             <Footer.LinkGroup col>
-              <Footer.Link href="#" className="hover:text-gray-300">Sanjay Nagar Raipur</Footer.Link>
-              <Footer.Link href="#" className="hover:text-gray-300">+91 123456888</Footer.Link>
-              <Footer.Link href="#" className="hover:text-gray-300">dis@gmail.com</Footer.Link>
-              <Footer.Link href="#" className="hover:text-gray-300">Monday to Saturday (9am to 6pm)</Footer.Link>
+              <Footer.Link href="#" className="hover:text-gray-300">Kavita Nagar Raipur</Footer.Link>
+              <Footer.Link href="#" className="hover:text-gray-300">+91 7218196231</Footer.Link>
+              <Footer.Link href="#" className="hover:text-gray-300">info@duttaintegratedservices.com</Footer.Link>
             </Footer.LinkGroup>
           </div>
           <div>
@@ -129,8 +128,8 @@ export function ContactForm() {
     e.preventDefault();
 
     emailjs
-      .sendForm('service_t0hujua', 'template_atny6ad', form.current, {
-        publicKey: 'J69NKrMQr7PVvyckO',
+      .sendForm('service_ldmp7zl', 'template_xxwv34d', form.current, {
+        publicKey: '5bZx2DXgDfYbBIX7j',
       })
       .then(
         () => {
@@ -161,8 +160,8 @@ export function ContactForm() {
             Contact us for any inquiries, demos, or support. We are here to help and offer one month of free service after delivery. Feel free to reach out!
           </p>
           <p className="text-xl font-semibold">Call us at:</p>
-          <p className="text-2xl text-text">+91 8910346798</p>
-          <p className="mt-6">You can also email us at <span className="text-text">hr@ecspvt.com</span></p>
+          <p className="text-2xl text-text">+91 7218196231</p>
+          <p className="mt-6">You can also email us at <span className="text-text">info@duttaintegratedservices.com</span></p>
         </div>
 
         {/* Form Section */}
@@ -297,6 +296,7 @@ export function WelcomeSection() {
 
 export function IndustriesCard({ image, label, description }) {
   return (
+    <a href="#contact">
     <div className="relative max-w-sm bg-div border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700 overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:rotate-1 hover:shadow-2xl">
       
       {/* Overlay for unique hover effect */}
@@ -321,6 +321,7 @@ export function IndustriesCard({ image, label, description }) {
         </p>
       </div>
     </div>
+    </a>
   );
 }
 

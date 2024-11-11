@@ -37,7 +37,7 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <div className="flex-grow md:flex md:justify-end hidden uppercase items-center gap-8 font-[Poppins]">
           <div>
-            <a href="" className="py-7 px-3 inline-block font-bold text-black hover:text-[#f97068] duration-300">
+            <a href="/" className="py-7 px-3 inline-block font-bold text-black hover:text-[#f97068] duration-300">
               Home
             </a>
           </div>
