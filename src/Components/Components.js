@@ -1,9 +1,10 @@
 import { Footer } from "flowbite-react";
 import { BsDribbble, BsFacebook, BsGithub, BsInstagram, BsTwitter } from "react-icons/bs";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
-
+import Aos from 'aos';
+import 'aos/dist/aos.css'
 
 //footer
 export function Component() {
@@ -71,8 +72,14 @@ export function Component() {
 
 //service card
 export function ServiceCard({ image, title, description }) {
+    // useEffect(()=>{
+    //     Aos.init({
+    //       duration : 1000
+    //     });
+    // });
   return (
-    <a
+    
+    <a data-aos="flip-right"
       href="#contact"
       className="max-w-xs bg-div h-90 flex flex-col justify-between border border-gray-200 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:rotate-1 hover:shadow-2xl hover:bg-gray-700 duration-300"
     >
@@ -103,20 +110,31 @@ export function ServiceCard({ image, title, description }) {
 
 
 //contact form
+
+
 export function ContactForm() {
+
+  useEffect(()=>{
+    Aos.init({
+      duration : 500,
+      offset:140
+    });
+});
+
   const form = useRef();
-  
+
   // State to manage form data
   const [formData, setFormData] = useState({
-    from_name: '',
-    email: '',
-    subject: '',
-    number: '',
-    message: '',
+    from_name: "",
+    email: "",
+    subject: "",
+    number: "",
+    message: "",
   });
 
   // Handle input changes
   const handleChange = (e) => {
+    
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -128,44 +146,48 @@ export function ContactForm() {
     e.preventDefault();
 
     emailjs
-      .sendForm('service_ldmp7zl', 'template_xxwv34d', form.current, {
-        publicKey: '5bZx2DXgDfYbBIX7j',
+      .sendForm("service_ldmp7zl", "template_xxwv34d", form.current, {
+        publicKey: "5bZx2DXgDfYbBIX7j",
       })
       .then(
         () => {
-          console.log('SUCCESS!');
-          alert('Form Submitted successfully!');
+          console.log("SUCCESS!");
+          alert("Form Submitted successfully!");
           // Reset form fields after successful submission
           setFormData({
-            from_name: '',
-            email: '',
-            subject: '',
-            number: '',
-            message: '',
+            from_name: "",
+            email: "",
+            subject: "",
+            number: "",
+            message: "",
           });
         },
         (error) => {
-          console.log('FAILED...', error.text);
+          console.log("FAILED...", error.text);
         }
       );
   };
-
+  
+  
   return (
-    <div id="contact" className="bg-div text-white py-16 px-4">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center ">
+    <div id="contact" className="bg-black text-white py-20 px-4 " >
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 pt-5 gap-8 items-center ">
         {/* Content Section */}
-        <div className="lg:pr-16 text-center lg:text-left">
+        <div className="lg:pr-16 text-center lg:text-left" data-aos="fade-right">
           <h2 className="text-4xl font-bold mb-4">Get In Touch</h2>
           <p className="text-lg text-gray-400 mb-6">
             Contact us for any inquiries, demos, or support. We are here to help and offer one month of free service after delivery. Feel free to reach out!
           </p>
           <p className="text-xl font-semibold">Call us at:</p>
           <p className="text-2xl text-text">+91 7218196231</p>
-          <p className="mt-6">You can also email us at <span className="text-text">info@duttaintegratedservices.com</span></p>
+          <p className="mt-6">
+            You can also email us at{" "}
+            <span className="text-text">info@duttaintegratedservices.com</span>
+          </p>
         </div>
 
         {/* Form Section */}
-        <div className="bg-form p-8 rounded-lg shadow-lg mx-10  ">
+        <div className="bg-form p-8 rounded-lg shadow-lg mx-10" data-aos="fade-left">
           <form ref={form} className="space-y-4" onSubmit={sendEmail}>
             <div>
               <input
@@ -190,15 +212,24 @@ export function ContactForm() {
               />
             </div>
             <div>
-              <input
-                type="text"
+              {/* Subject Dropdown */}
+              <select
                 name="subject"
                 value={formData.subject}
                 onChange={handleChange}
                 required
                 className="w-full px-4 py-2 text-black rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                placeholder="Subject"
-              />
+              >
+                <option value="" disabled>
+                  Select Subject
+                </option>
+                <option value="App Development">App Development</option>
+                <option value="Web Development">Web Development</option>
+                <option value="API Development">SEO Development</option>
+                <option value="API Development">Graphics Design</option>
+                <option value="API Development">API Development</option>
+                <option value="API Development">API Development</option>
+              </select>
             </div>
             <div>
               <input
@@ -236,6 +267,7 @@ export function ContactForm() {
     </div>
   );
 }
+
 
 //welcome 
 export function WelcomeSection() {
@@ -295,8 +327,15 @@ export function WelcomeSection() {
 //industries card
 
 export function IndustriesCard({ image, label, description }) {
+
+//   useEffect(()=>{
+//     Aos.init({
+//       duration : 300,
+//     });
+// });
+
   return (
-    <a href="#contact">
+    <a href="#contact" data-aos="zoom-in">
     <div className="relative max-w-sm bg-div border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700 overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:rotate-1 hover:shadow-2xl">
       
       {/* Overlay for unique hover effect */}

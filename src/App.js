@@ -1,29 +1,35 @@
-import React from 'react';
-import { Component,ContactForm,WelcomeSection} from './Componenets/Componenets'; // Adjust the path if needed
-import OurServices from './Componenets/OurServices';
-import Industries from './Componenets/Industries';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import Navbar from './Components/Navbar/Navbar';
+import Home from './pages/Homepage/Home';
 
-import Navbar from './Componenets/Navbar/Navbar';
+import Services from './pages/Services';
+import BusinessPage from './pages/business';
+import EnhancedContactForm from './pages/Contact';
+import './App.css';
 
+import ScrollToTop from './pages/ScrollToTop';
 
-
+import ConsultationtPage from './pages/Consultant';
+import { AboutPage } from './pages/About';
 
 
 function App() {
   return (
-    <div className="App">
-        <Navbar/>
-   
-      
-       <WelcomeSection/>
-        <OurServices />
-        <Industries />
-        <ContactForm />
-       
-        <Component />
-    
-     </div>
-    
+    <Router>
+      <ScrollToTop />
+      <Navbar />
+      <div className="app-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/consultation" element={<ConsultationtPage />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/contact" element={<EnhancedContactForm />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/itsolutions" element={<BusinessPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

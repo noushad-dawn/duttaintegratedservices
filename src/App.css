@@ -1,0 +1,13 @@
+/* Navbar styles */
+.navbar {
+  height: 4rem; /* Adjust this height to match your navbar */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+}
+
+/* Content below the navbar */
+.app-content {
+  padding-top: 4rem; /* Matches the height of the navbar */
+}
